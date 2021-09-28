@@ -1,7 +1,16 @@
 <!DOCTYPE html>
   <html>
     <head>
-    <link rel = "stylesheet" href = "fss.css">
+    <style>
+    body {
+      background-color: linen;
+    }
+
+    h1 {
+      color: red;
+      margin-left: 40px;
+    }
+    </style>
       <title><b>Florida Solar Suitability</b></title>
     </head>
     <body>
