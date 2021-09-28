@@ -1,6 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
+    <link rel = "stylesheet" href = "fss.css">
       <title><b>Florida Solar Suitability</b></title>
     </head>
     <body>
