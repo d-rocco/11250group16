@@ -4,6 +4,7 @@
 <title>Florida Solar Suitability</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
 <style>
 
 /* Styles and sets up scroll bars if the screen can't fit all the information */
@@ -111,14 +112,18 @@ body {
   </div>
   
   <div class="column middle">
-    <h2>Florida Solar Map</h2>
-    <p>Map would go here.</p>
+    <div id="map"></div>
   </div>
   
   <div class="column side">
   </div>
   
 </div>
+
+<script src="fssmap.js"></script>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmg-SPu3dGfoDLbx6w2rPoAV00s3IR1OI&callback=initMap">
+</script>
   
 </body>
 </html>
