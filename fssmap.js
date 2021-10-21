@@ -1,3 +1,4 @@
+
 // Creates a marker on the map and returns a marker
 const createMarker = ({ map, position }) => {
     return new google.maps.Marker({ map, position });
@@ -30,7 +31,7 @@ const createMarker = ({ map, position }) => {
 function initMap() {
     const initialPosition = {lat: 28.0, lng: -83.5}; // To simplify future calls to this position
 
-    map = new google.maps.Map(document.getElementById('map'), {
+     map = new google.maps.Map(document.getElementById('map'), {
         center: initialPosition,
         zoom: 7
       });
@@ -48,3 +49,5 @@ function initMap() {
           alert(`Error: ${getPositionErrorMessage(err.code) || err.message}`)
       });
 }
+
+module.exports = initMap
