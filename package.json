@@ -1,0 +1,26 @@
+{
+  "name": "google-maps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fssmap.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  },
+  "dependencies": {
+    "@googlemaps/jest-mocks": "^1.3.4",
+    "jest-google-maps-mock": "^1.0.7"
+  },
+  "jest": {
+    "globals": {
+      "google": {
+        
+      }
+    }
+  }
+}

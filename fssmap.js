@@ -1,3 +1,4 @@
+
 // Creates a marker on the map and returns a marker
 const createMarker = ({ map, position }) => {
     return new google.maps.Marker({ map, position });
@@ -47,6 +48,7 @@ function initMap() {
         onError: err => // If location not found.
           alert(`Error: ${getPositionErrorMessage(err.code) || err.message}`)
       });
+
 
       //current solar panel location markers
       new google.maps.Marker({
@@ -216,3 +218,5 @@ function initMap() {
         icon:"https://img.icons8.com/fluency/50/000000/sun.png"
       })
 }
+
+module.exports = initMap
