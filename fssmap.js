@@ -137,6 +137,7 @@ function initMap() {
         map:map,
         icon:"https://img.icons8.com/fluency/50/000000/sun.png"
       })
+      // Neeva's markers starts here
       new google.maps.Marker({
         position:{lat:27.322106, lng:-81.810023},
         map:map,
