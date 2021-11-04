@@ -259,9 +259,63 @@ function initMap() {
   infoWindow = new google.maps.InfoWindow();
 
   // Legend letter markers
-  var icon_L = {
+
+  const contentString =
+    "<b>Highlight Legend</b><br>" +
+    "<br>" +
+    "<b>Hot and Cold Zones</b><br>" +
+    "<br>" +
+    "<b>Hot:</b> An area where solar power is considered preferred in Florida! <br>" +
+    "<b>Cold:</b> An area where solar power is considered not preferred in Florida! <br>" +
+    "<br>" +
+    "The color coding is a representation of whether a given area is considered hot or cold for solar power. <br>" +
+    "<b>Purple:</b> An area where solar power is considered strongly not preferred! <br>" +
+    "<b>Blue:</b> An area where solar power is considered moderately not preferred! <br>" +
+    "<b>Yellow:</b> An area where solar power is considered neither preferred nor unpreferred! <br>" +
+    "<b>Orange:</b> An area where solar power is considered moderately preferred! <br>" +
+    "<b>Red:</b> An area where solar power is considered strongly preferred! <br>" +
+    "<br>" +
+    "<b>Suitable and Unsuitable Zones</b><br>" +
+    "<br>" +
+    "<b>Suitable:</b> An area where solar power is considered suitable in Florida! <br>" +
+    "<b>Unsuitable:</b> An area where solar power is considered not suitable in Florida! <br>" +
+    "<br>" +
+    "The opacity is a representation of whether a given area is considered suitable or unsuitable for solar power. <br>" +
+    "<b>Suitable:</b> If an area represents one of the rectangles at the top of this legend, then the area is considered suitable for solar power! <br>" +
+    "<b>Unsuitable:</b> If an area represents one of the rectangles at the bottom of this legend, then the area is considered unsuitable for solar power! <br>" +
+    "<br>";
+
+    const infowindow = new google.maps.InfoWindow({
+      content: contentString,
+    });
+
+
+  var icon_Legend = {
+    url: "https://iconape.com/wp-content/files/gg/75919/png/legend.png", // url
+    scaledSize: new google.maps.Size(150, 72.5), // scaled size
+  };
+
+  
+  if (map.zoom == 7)
+  { 
+    legendMarker = new google.maps.Marker({
+    position:{lat:25.25, lng:-86.25},
+    map:map,
+    icon:icon_Legend 
+  })
+  }
+
+  legendMarker.addListener("click", () => {
+    infowindow.open({
+      anchor: legendMarker,
+      map,
+      shouldFocus: false,
+    });
+  });
+
+  /*var icon_L = {
     url: "https://pngimg.com/uploads/letter_L/letter_L_PNG92.png", // url
-    scaledSize: new google.maps.Size(25, 25), // scaled size
+    scaledSize: new google.maps.Size(50, 50), // scaled size
   };
 
   new google.maps.Marker({
@@ -276,7 +330,7 @@ function initMap() {
   };
 
   new google.maps.Marker({
-    position:{lat:25.35, lng:-86.964},
+    position:{lat:25.5, lng:-86.964},
     map:map,
     icon:icon_e 
   })
@@ -300,7 +354,7 @@ function initMap() {
 
   var icon_n = {
     url: "https://pngimg.com/uploads/letter_n/letter_n_PNG26.png", // url
-    scaledSize: new google.maps.Size(25, 25), // scaled size
+    scaledSize: new google.maps.Size(50, 50), // scaled size
   };
 
   new google.maps.Marker({
@@ -311,14 +365,14 @@ function initMap() {
 
   var icon_d = {
     url: "https://pngimg.com/uploads/letter_d/letter_d_PNG6.png", // url
-    scaledSize: new google.maps.Size(35, 35), // scaled size
+    scaledSize: new google.maps.Size(50, 50), // scaled size
   };
 
   new google.maps.Marker({
     position:{lat:25.4, lng:-85.536},
     map:map,
     icon:icon_d 
-  })
+  })*/
 
     //current solar panel location markers
     new google.maps.Marker({
@@ -516,8 +570,8 @@ function showArrays(event) {
     "<b>Unsuitable:</b> An area where solar power is considered not suitable in Florida! <br>" +
     "<br>" +
     "The opacity is a representation of whether a given area is considered suitable or unsuitable for solar power. <br>" +
-    "<b>Unsuitable:</b> If an area represents one of the rectangles at the top of this legend, then the area is considered unsuitable for solar power! <br>" +
-    "<b>Suitable:</b> If an area represents one of the rectangles at the bottom of this legend, then the area is considered suitable for solar power! <br>" +
+    "<b>Suitable:</b> If an area represents one of the rectangles at the top of this legend, then the area is considered suitable for solar power! <br>" +
+    "<b>Unsuitable:</b> If an area represents one of the rectangles at the bottom of this legend, then the area is considered unsuitable for solar power! <br>" +
     "<br>";
 
   // Iterate over the vertices.
