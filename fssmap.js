@@ -283,6 +283,11 @@ function initMap() {
     "The opacity is a representation of whether a given area is considered suitable or unsuitable for solar power. <br>" +
     "<b>Suitable:</b> If an area represents one of the rectangles at the top of this legend, then the area is considered suitable for solar power! <br>" +
     "<b>Unsuitable:</b> If an area represents one of the rectangles at the bottom of this legend, then the area is considered unsuitable for solar power! <br>" +
+    "<br>" +
+    "<b>Markers</b><br>" +
+    "<br>" +
+    "<b>Sun Markers:</b> These markers represent the locations of power plants in Florida that provide solar power to Florida areas. <br>" +
+    "<b>Google Maps Marker:</b> This marker appears only if you allow location tracking. Presents your current location on the map.<br>" +
     "<br>";
 
     const infowindow = new google.maps.InfoWindow({
@@ -572,6 +577,11 @@ function showArrays(event) {
     "The opacity is a representation of whether a given area is considered suitable or unsuitable for solar power. <br>" +
     "<b>Suitable:</b> If an area represents one of the rectangles at the top of this legend, then the area is considered suitable for solar power! <br>" +
     "<b>Unsuitable:</b> If an area represents one of the rectangles at the bottom of this legend, then the area is considered unsuitable for solar power! <br>" +
+    "<br>" +
+    "<b>Markers</b><br>" +
+    "<br>" +
+    "<b>Sun Markers:</b> These markers represent the locations of power plants in Florida that provide solar power to Florida areas. <br>" +
+    "<b>Google Maps Marker:</b> This marker appears only if you allow location tracking. Presents your current location on the map.<br>" +
     "<br>";
 
   // Iterate over the vertices.
