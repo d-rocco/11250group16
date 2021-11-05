@@ -294,21 +294,26 @@ function initMap() {
       content: contentString,
     });
 
-
   var icon_Legend = {
     url: "https://iconape.com/wp-content/files/gg/75919/png/legend.png", // url
     scaledSize: new google.maps.Size(150, 72.5), // scaled size
   };
 
-  
-  if (map.zoom == 7)
-  { 
     legendMarker = new google.maps.Marker({
     position:{lat:25.25, lng:-86.25},
     map:map,
     icon:icon_Legend 
   })
-  }
+
+  google.maps.event.addListener(map, 'zoom_changed', function() {
+    var zooms = map.getZoom();
+    
+        if (zooms != 7) {
+            legendMarker.setMap(null);
+        } else {                           
+            legendMarker.setMap(map);
+        }
+    });
 
   legendMarker.addListener("click", () => {
     infowindow.open({
@@ -547,6 +552,7 @@ function initMap() {
       map:map,
       icon:"https://img.icons8.com/fluency/50/000000/sun.png"
     })
+    
 }
 
 function showArrays(event) {
