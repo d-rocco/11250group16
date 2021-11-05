@@ -323,67 +323,6 @@ function initMap() {
     });
   });
 
-  /*var icon_L = {
-    url: "https://pngimg.com/uploads/letter_L/letter_L_PNG92.png", // url
-    scaledSize: new google.maps.Size(50, 50), // scaled size
-  };
-
-  new google.maps.Marker({
-    position:{lat:25.5, lng:-87.321},
-    map:map,
-    icon:icon_L 
-  })
-
-  var icon_e = {
-    url: "https://pngimg.com/uploads/letter_e/letter_e_PNG13.png", // url
-    scaledSize: new google.maps.Size(50, 50), // scaled size
-  };
-
-  new google.maps.Marker({
-    position:{lat:25.5, lng:-86.964},
-    map:map,
-    icon:icon_e 
-  })
-
-  var icon_g = {
-    url: "http://pngimg.com/uploads/letter_g/letter_g_PNG7.png", // url
-    scaledSize: new google.maps.Size(50, 50), // scaled size
-  };
-
-  new google.maps.Marker({
-    position:{lat:25.3, lng:-86.607},
-    map:map,
-    icon:icon_g 
-  })
-
-  new google.maps.Marker({
-    position:{lat:25.35, lng:-86.25},
-    map:map,
-    icon:icon_e 
-  })
-
-  var icon_n = {
-    url: "https://pngimg.com/uploads/letter_n/letter_n_PNG26.png", // url
-    scaledSize: new google.maps.Size(50, 50), // scaled size
-  };
-
-  new google.maps.Marker({
-    position:{lat:25.45, lng:-85.893},
-    map:map,
-    icon:icon_n 
-  })
-
-  var icon_d = {
-    url: "https://pngimg.com/uploads/letter_d/letter_d_PNG6.png", // url
-    scaledSize: new google.maps.Size(50, 50), // scaled size
-  };
-
-  new google.maps.Marker({
-    position:{lat:25.4, lng:-85.536},
-    map:map,
-    icon:icon_d 
-  })*/
-
     //current solar panel location markers
     new google.maps.Marker({
       position:{lat:30.2808, lng:-82.7818},
