@@ -291,6 +291,10 @@ function initMap() {
     "<br>" +
     "<b>Sun Markers:</b> These markers represent the locations of power plants in Florida that provide solar power to Florida areas. <br>" +
     "<b>Google Maps Marker:</b> This marker appears only if you allow location tracking. Presents your current location on the map.<br>" +
+    "<br>" +
+    "<b>Global Horizontal Irradiance (GHI)</b><br>" +
+    "<br>" +
+    "<b>Global Horizontal Irradiance (GHI):</b> The total amount of shortwave radiation received from above by a surface horizontal to the ground. The greater this index value is the better suited the location will be for solar panel install as there is more solar radiation available to take in convert to electricity. This fundamental index is the basis of most solar radiation measurement system designs, data quality assessments, and atmospheric radiative transfer models addressing the needs for solar resource data.<br>" +
     "<br>";
 
     const infowindow = new google.maps.InfoWindow({
@@ -1578,6 +1582,10 @@ function showArrays(event) {
     "<br>" +
     "<b>Sun Markers:</b> These markers represent the locations of power plants in Florida that provide solar power to Florida areas. <br>" +
     "<b>Google Maps Marker:</b> This marker appears only if you allow location tracking. Presents your current location on the map.<br>" +
+    "<br>" +
+    "<b>Global Horizontal Irradiance (GHI)</b><br>" +
+    "<br>" +
+    "<b>Global Horizontal Irradiance (GHI):</b> The total amount of shortwave radiation received from above by a surface horizontal to the ground. The greater this index value is the better suited the location will be for solar panel install as there is more solar radiation available to take in convert to electricity. This fundamental index is the basis of most solar radiation measurement system designs, data quality assessments, and atmospheric radiative transfer models addressing the needs for solar resource data.<br>" +
     "<br>";
 
   // Iterate over the vertices.
