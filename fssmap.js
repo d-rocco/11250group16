@@ -66,6 +66,8 @@ function initMap() {
   });
 
   purpleRangeRectangle.setMap(map);
+  
+
 
   // Define the LatLng coordinates for the polygon's path.
   const blueRange = [
@@ -85,6 +87,7 @@ function initMap() {
   });
 
   blueRangeRectangle.setMap(map);
+
   
   // Define the LatLng coordinates for the polygon's path.
   const yellowRange = [
@@ -329,11 +332,26 @@ function initMap() {
       map:map,
       icon:"https://img.icons8.com/fluency/50/000000/sun.png"
     })
-    new google.maps.Marker({
+
+
+    solarGate = new google.maps.Marker({
       position:{lat:30.259140, lng:-82.837050},
       map:map,
       icon:"https://img.icons8.com/fluency/50/000000/sun.png"
     })
+    solarGateInfo = new google.maps.InfoWindow();
+    solarGate.addListener("click", showSolarGate)
+    function showSolarGate(event)
+    {
+      let solarGateContent = 
+      "<b>Sunshine Gateway Solar Energy Center</b><br>" +
+      "Number of Panels: 351,230";
+      console.log("getting hereeeeee");
+      solarGateInfo.setContent(solarGateContent);
+      solarGateInfo.setPosition(solarGate.position);
+      solarGateInfo.open(map);
+    }
+
     new google.maps.Marker({
       position:{lat:30.259140, lng:-82.837050},
       map:map,
@@ -491,7 +509,12 @@ function initMap() {
       map:map,
       icon:"https://img.icons8.com/fluency/50/000000/sun.png"
     })
-    
+    //how color are blocked off for zones based on GHI
+    // 204-209.99 : 5 
+    // 210-215.99
+    // 216-221.99 : 3
+    // 222-227.99
+    // 228-233.99 : 1
     const northEastCoords = [
       { lng: -80.98815484, lat: 28.61309178 },
       { lng: -80.96561374, lat: 28.61288272 },
@@ -585,13 +608,32 @@ function initMap() {
     ];
     const northEast = new google.maps.Polygon ({
       paths: northEastCoords,
-      strokeColor: "#FF0000",
+      strokeColor: "#6A0DAD",
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: "#FF0000",
+      fillColor: "#6A0DAD",
       fillOpacity: 0.35,
     });
     northEast.setMap(map);
+    northEastInfoWindow=new google.maps.InfoWindow();
+    northEast.addListener("click", showArrNorthEast)
+    function showArrNorthEast(event)
+    {
+      let northEastContent = 
+      "<b>North East Zone</b>" + 
+      "<br> <br>" +
+      "<b>Clicked location</b> <br> Lat: " +
+      event.latLng.lat() + ", <br> Long: " + 
+      event.latLng.lng()+ "<br>" + "<br>" + "<b>Zone Information</b>" + "<br>" + 
+      "Site Index: 1028723 <br>" +
+      "Coordinates for Site Index: (29.98, -81.58) <br>" +
+      "GHI Index: 208.24589";
+      console.log("getting north east!!!!!");
+      northEastInfoWindow.setContent(northEastContent);
+      northEastInfoWindow.setPosition(event.latLng);
+      northEastInfoWindow.open(map);
+    }
+
 
     const northCentralCoords = [
       { lng: -82.05026599, lat: 30.36228002 },
@@ -700,13 +742,31 @@ function initMap() {
     ];
     const northCentral = new google.maps.Polygon ({
       paths: northCentralCoords,
-      strokeColor: "#FFA500",
+      strokeColor: "#6A0DAD",
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: "#FFA500",
+      fillColor: "#6A0DAD",
       fillOpacity: 0.35,
     });
     northCentral.setMap(map);
+    northCentralInfoWindow=new google.maps.InfoWindow();
+    northCentral.addListener("click", showArrNorthCentral)
+    function showArrNorthCentral(event)
+    {
+      let northCentralContent = 
+      "<b>North Central Zone</b>" + 
+      "<br> <br>" +
+      "<b>Clicked location</b> <br> Lat: " +
+      event.latLng.lat() + ", <br> Long: " + 
+      event.latLng.lng()+ "<br>" + "<br>" + "<b>Zone Information</b>" + "<br>" + 
+      "Site Index: 992422 <br>" +
+      "Coordinates for Site Index: (29.77, -83.34) <br>" +
+      "GHI Index: 208.24589";
+      console.log("getting north central");
+      northCentralInfoWindow.setContent(northCentralContent);
+      northCentralInfoWindow.setPosition(event.latLng);
+      northCentralInfoWindow.open(map);
+    }
 
     const eastCentralCoords = [
       { lng: -80.66344200, lat: 28.79083717 },
@@ -815,6 +875,24 @@ function initMap() {
       fillOpacity: 0.35,
     });
     eastCentral.setMap(map);
+    eastCentralInfoWindow=new google.maps.InfoWindow();
+    eastCentral.addListener("click", showArrEastCentral)
+    function showArrEastCentral(event)
+    {
+      let eastCentralContent = 
+      "<b>East Central Zone</b>" + 
+      "<br> <br>" +
+      "<b>Clicked location</b> <br> Lat: " +
+      event.latLng.lat() + ", <br> Long: " + 
+      event.latLng.lng()+ "<br>" + "<br>" + "<b>Zone Information</b>" + "<br>" + 
+      "Site Index: 1036063 <br>" +
+      "Coordinates for Site Index: (27.85, -81.26) <br>" +
+      "GHI Index: 216.94041";
+      console.log("getting east central");
+      eastCentralInfoWindow.setContent(eastCentralContent);
+      eastCentralInfoWindow.setPosition(event.latLng);
+      eastCentralInfoWindow.open(map);
+    }
 
     const eastPanhandleCoords = [
       { lng: -85.44265154, lat: 30.99625828 },
@@ -901,13 +979,31 @@ function initMap() {
     ];
     const eastPanhandle = new google.maps.Polygon ({
       paths: eastPanhandleCoords,
-      strokeColor: "#0000FF",
+      strokeColor: "#6A0DAD",
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: "#0000FF",
+      fillColor: "#6A0DAD",
       fillOpacity: 0.35,
     });
     eastPanhandle.setMap(map);
+    eastPanhandleInfoWindow=new google.maps.InfoWindow();
+    eastPanhandle.addListener("click", showArrEastPanhandle)
+    function showArrEastPanhandle(event)
+    {
+      let eastPanhandleContent = 
+      "<b>East Panhandle Zone</b>" + 
+      "<br> <br>" +
+      "<b>Clicked location</b> <br> Lat: " +
+      event.latLng.lat() + ", <br> Long: " + 
+      event.latLng.lng()+ "<br>" + "<br>" + "<b>Zone Information</b>" + "<br>" + 
+      "Site Index: 1000998 <br>" +
+      "Coordinates for Site Index: (29.97, -82.94) <br>" +
+      "GHI Index: 209.24304";
+      console.log("getting east panhandle");
+      eastPanhandleInfoWindow.setContent(eastPanhandleContent);
+      eastPanhandleInfoWindow.setPosition(event.latLng);
+      eastPanhandleInfoWindow.open(map);
+    }
 
     const westCentralCoords = [
       { lng: -82.30989229, lat: 28.96048197 },
@@ -995,13 +1091,31 @@ function initMap() {
     ];
     const westCentral = new google.maps.Polygon({
       paths: westCentralCoords,
-      strokeColor: "#6A0DAD",
+      strokeColor: "#FFFF00",
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: "#6A0DAD",
+      fillColor: "#FFFF00",
       fillOpacity: 0.35,
     });
     westCentral.setMap(map);
+    westCentralInfoWindow=new google.maps.InfoWindow();
+    westCentral.addListener("click", showArrWestCentra)
+    function showArrWestCentra(event)
+    {
+      let westCentralContent = 
+      "<b>West Central Zone</b>" + 
+      "<br> <br>" +
+      "<b>Clicked location</b> <br> Lat: " +
+      event.latLng.lat() + ", <br> Long: " + 
+      event.latLng.lng()+ "<br>" + "<br>" + "<b>Zone Information</b>" + "<br>" + 
+      "Site Index: 1006442 <br>" +
+      "Coordinates for Site Index: (27.97, -82.66) <br>" +
+      "GHI Index: 217.60616";
+      console.log("getting west central");
+      westCentralInfoWindow.setContent(westCentralContent);
+      westCentralInfoWindow.setPosition(event.latLng);
+      westCentralInfoWindow.open(map);
+    }
 
     const southEastCoords = [
       { lng: -80.01798026, lat: 26.96785118 },
@@ -1068,6 +1182,24 @@ function initMap() {
       fillOpacity: 0.35,
     });
     southEast.setMap(map);
+    southEastInfoWindow=new google.maps.InfoWindow();
+    southEast.addListener("click", showArrSouthEast)
+    function showArrSouthEast(event)
+    {
+      let southEastContent = 
+      "<b>South East Zone</b>" + 
+      "<br> <br>" +
+      "<b>Clicked location</b> <br> Lat: " +
+      event.latLng.lat() + ", <br> Long: " + 
+      event.latLng.lng()+ "<br>" + "<br>" + "<b>Zone Information</b>" + "<br>" + 
+      "Site Index: 1031028 <br>" +
+      "Coordinates for Site Index: (25.61, -81.5) <br>" +
+      "GHI Index: 231.38345";
+      console.log("getting south east");
+      southEastInfoWindow.setContent(southEastContent);
+      southEastInfoWindow.setPosition(event.latLng);
+      southEastInfoWindow.open(map);
+    }
 
     const southWestCoords = [
       { lng: -82.55328976, lat: 27.64567842 },
@@ -1148,13 +1280,31 @@ function initMap() {
     ];
     const southWest = new google.maps.Polygon ({
       paths: southWestCoords,
-      strokeColor: "#FFA500",
+      strokeColor: "#FFFF00",
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: "#FFA500",
+      fillColor: "#FFFF00",
       fillOpacity: 0.35,
     });
     southWest.setMap(map);
+    southWestInfoWindow=new google.maps.InfoWindow();
+    southWest.addListener("click", showArrSouthWest)
+    function showArrSouthWest(event)
+    {
+      let southWestContent = 
+      "<b>South West Zone</b>" + 
+      "<br> <br>" +
+      "<b>Clicked location</b> <br> Lat: " +
+      event.latLng.lat() + ", <br> Long: " + 
+      event.latLng.lng()+ "<br>" + "<br>" + "<b>Zone Information</b>" + "<br>" + 
+      "Site Index: 1041952 <br>" +
+      "Coordinates for Site Index: (26.89, -80.98) <br>" +
+      "GHI Index: 221.21284";
+      console.log("getting south west");
+      southWestInfoWindow.setContent(southWestContent);
+      southWestInfoWindow.setPosition(event.latLng);
+      southWestInfoWindow.open(map);
+    }
 
     const westPanhandleCoords = [
       { lng: -87.59851414, lat: 30.99726022 },
@@ -1215,13 +1365,31 @@ function initMap() {
     ];
     const westPanhandle = new google.maps.Polygon ({
       paths: westPanhandleCoords,
-      strokeColor: "#FFFF00",
+      strokeColor: "#6A0DAD",
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: "#FFFF00",
+      fillColor: "#6A0DAD",
       fillOpacity: 0.35,
     });
     westPanhandle.setMap(map);
+    westPanhandleInfoWindow=new google.maps.InfoWindow();
+    westPanhandle.addListener("click", showArrPanhandle)
+    function showArrPanhandle(event)
+    {
+      let westPanhandleContent = 
+      "<b>West Panhandle Zone</b>" + 
+      "<br> <br>" +
+      "<b>Clicked location</b> <br> Lat: " +
+      event.latLng.lat() + ", <br> Long: " + 
+      event.latLng.lng()+ "<br>" + "<br>" + "<b>Zone Information</b>" + "<br>" + 
+      "Site Index: 905742 <br>" +
+      "Coordinates for Site Index: (30.33, -87.5) <br>" +
+      "GHI Index: 204.84772";
+      console.log("getting west panhandle");
+      westPanhandleInfoWindow.setContent(westPanhandleContent);
+      westPanhandleInfoWindow.setPosition(event.latLng);
+      westPanhandleInfoWindow.open(map);
+    }
 
     const centralCoords = [
       { lng: -82.05542048, lat: 27.64582939 },
@@ -1348,14 +1516,34 @@ function initMap() {
     ];
     const central = new google.maps.Polygon ({
       paths: centralCoords,
-      strokeColor: "#0000FF",
+      strokeColor: "#6A0DAD",
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: "#0000FF",
+      fillColor: "#6A0DAD",
       fillOpacity: 0.35,
     });
     central.setMap(map);
+    centralInfoWindow=new google.maps.InfoWindow();
+    central.addListener("click", showArrCentral)
+    function showArrCentral(event)
+    {
+      let centralContent = 
+      "<b> Central Zone</b>" + 
+      "<br> <br>" +
+      "<b>Clicked location</b> <br> Lat: " +
+      event.latLng.lat() + ", <br> Long: " + 
+      event.latLng.lng()+ "<br>" + "<br>" + "<b>Zone Information</b>" + "<br>" + 
+      "Site Index: 1045298 <br>" +
+      "Coordinates for Site Index: (30.33, -87.5) <br>" +
+      "GHI Index: 209.07140";
+      console.log("getting central");
+      centralInfoWindow.setContent(centralContent);
+      centralInfoWindow.setPosition(event.latLng);
+      centralInfoWindow.open(map);
+    }
 }
+
+
 
 function showArrays(event) {
   // Polygon does not have only one path. Need to return MVCArray of LatLngs. Do not know how to do that.
