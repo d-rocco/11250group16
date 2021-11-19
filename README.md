@@ -1,6 +1,6 @@
 # 11250group16
 
 Member1: Daniel Rocco
-Member2: William Gregory
-Member3:
-Member4:
+Member2: Mitali Matoli
+Member3: William Gregory
+Member4: Neeva Sethi
