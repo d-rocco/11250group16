@@ -5,9 +5,7 @@ FSS is a web application that allows for user's to get a better understanding ab
 
 # Requirements
 
-HTML/CSS
-JavaScript
-Python
+HTML/CSS, JavaScript, Python
 
 # 11250 Group 16
 
