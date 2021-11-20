@@ -11,7 +11,7 @@ Member2: Mitali Matoli
 Member3: William Gregory
 Member4: Neeva Sethi
 
-#Installation 
+# Installation 
 
 Normal instruction to follow for installing a HTML based web application
 
